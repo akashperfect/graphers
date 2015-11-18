@@ -16,10 +16,14 @@ var workbook = new Excel.Workbook();
 //     { header: "Name", key: "name", width: 32 },
 //     { header: "D.O.B.", key: "DOB", width: 10 }
 // ];
-// workbook.xlsx.writeFile("new.xlsx")
+
+// workbook.xlsx.readFile("./DDW_0200C_08-2011.xlsx")
 //     .then(function() {
-//         // done 
-//     });
+// 		workbook.xlsx.writeFile("data.xlsx")
+// 		    .then(function() {
+// 		        // done 
+// 		    });
+// 	});
 
 /*	Data source is 
  * https://data.gov.in/catalog/educational-level-age-and-sex-population-age-7-and-above-2011-india-and-states
@@ -28,7 +32,7 @@ var workbook = new Excel.Workbook();
 workbook.xlsx.readFile("./data.xlsx")
     .then(function() {
 		var worksheet = workbook.getWorksheet(1);
-		var dobCol = worksheet.getColumn(4);
+		// var dobCol = worksheet.getColumn(4);
 		
 		// console.log(worksheet.columns);
 		// console.log((dobCol.));
@@ -65,9 +69,9 @@ workbook.xlsx.readFile("./data.xlsx")
 			});
 			data.row.push({"c":new_row});
 		});
-		// console.log(data);
+		console.log(data);
 		// data.row.push({"c":[{"v":"Mushrooms","f":null},{"v":3,"f":null}]})
-		console.log(JSON.stringify(data.row[5]));
+		console.log(data.row[1]);
 
 		// workbook.xlsx.writeFile("another.xlsx")
 		//     .then(function() {
